@@ -1,0 +1,15 @@
+.ItemHero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}

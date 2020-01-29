@@ -1,0 +1,13 @@
+.ListHeroes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.ListHeroes li {
+  padding: 5px 10px;
+  color: grey;
+  cursor: pointer;
+}
