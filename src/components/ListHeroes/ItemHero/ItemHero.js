@@ -1,14 +1,19 @@
 import React from 'react'
 import './ItemHero.scss'
+import LukeSkywalker from '../../../assets/image/LukeSkywalker.jpg'
+import BiggsDarklighter from '../../../assets/image/BiggsDarklighter.jpg'
 
 const ItemHero = (props) => {
   console.log(props);
   return (
     <div className="ItemHero">
-      <img className="ItemHero__img" src={props.hero.name} alt={props.hero.name}/>
+      {/* <img className="ItemHero__img" src={props.hero.name.split(' ').join('')} alt={props.hero.name}/> */}
+      {/* <img className="ItemHero__img" src={`../../../assets/image/${props.hero.name.split(' ').join('')}.c5857f7d.jpg`} alt={props.hero.name}/> */}
+      {/* <img className="ItemHero__img" src={BiggsDarklighter} alt={props.hero.name}/> */}
+      <img className="ItemHero__img" src={`/static/media//${props.hero.name.split(' ').join('')}.c5857f7d.jpg`} alt={props.hero.name}/>
       <div className="ItemHero__content">
         <h4 className="ItemHero__title">
-          {props.hero.name}
+          {props.hero.name.split(' ').join('')}
         </h4>
         <ul className="ItemHero__list">
           <li>Gender {props.hero.gender}</li>
