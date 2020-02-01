@@ -1,19 +1,25 @@
 import React from 'react'
 import './ItemHero.scss'
-import LukeSkywalker from '../../../assets/image/LukeSkywalker.jpg'
-import BiggsDarklighter from '../../../assets/image/BiggsDarklighter.jpg'
 
 const ItemHero = (props) => {
-  console.log(props);
+
+
+
+  function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item)})
+    return images;
+  }
+
+  const images = importAll(require.context('../../../assets/image', false, /\.(png|jpe?g|svg)$/));
+
+  const nameImg = `${props.hero.name.split(' ').join('')}.jpg`
   return (
     <div className="ItemHero">
-      {/* <img className="ItemHero__img" src={props.hero.name.split(' ').join('')} alt={props.hero.name}/> */}
-      {/* <img className="ItemHero__img" src={`../../../assets/image/${props.hero.name.split(' ').join('')}.c5857f7d.jpg`} alt={props.hero.name}/> */}
-      {/* <img className="ItemHero__img" src={BiggsDarklighter} alt={props.hero.name}/> */}
-      <img className="ItemHero__img" src={`/static/media//${props.hero.name.split(' ').join('')}.c5857f7d.jpg`} alt={props.hero.name}/>
+      <img className="ItemHero__img" src={images[nameImg]} alt={props.hero.name}/>
       <div className="ItemHero__content">
         <h4 className="ItemHero__title">
-          {props.hero.name.split(' ').join('')}
+          {props.hero.name}
         </h4>
         <ul className="ItemHero__list">
           <li>Gender {props.hero.gender}</li>
