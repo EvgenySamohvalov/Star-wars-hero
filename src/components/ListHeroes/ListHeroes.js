@@ -33,7 +33,6 @@ export default class ListHeroes extends Component {
         hesous,
         loading: false
       })
-      console.log(response)
 
     } catch (e) {
       console.error(e)
